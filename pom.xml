@@ -10,19 +10,40 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>maven-plugin</packaging>
 
-  <name>remove-attached-artifact-maven-plugin Maven Plugin</name>
+  <name>Remove Attached Artifact Maven Plugin</name>
+  <url>http://www.rudikershaw.com</url>
 
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>Rudi A. Kershaw</name>
+      <email>alexander_kershaw@hotmail.co.uk</email>
+      <organization>None</organization>
+      <organizationUrl>https://www.rudikershaw.com</organizationUrl>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git://github.com/rudikershaw/remove-attached-artifact-maven-plugin.git</connection>
+    <developerConnection>scm:git:ssh://github.com:rudikershaw/remove-attached-artifact-maven-plugin.git</developerConnection>
+    <url>http://github.com/rudikershaw/remove-attached-artifact-maven-plugin/tree/main</url>
+  </scm>
 
   <prerequisites>
     <maven>${maven.version}</maven>
   </prerequisites>
 
   <properties>
+    <java.version>1.8</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
     <maven.version>3.3.9</maven.version>
   </properties>
 
@@ -72,13 +93,12 @@
   </dependencies>
 
   <build>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <pluginManagement>
       <plugins>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
         </plugin>
-        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_maven-plugin_packaging -->
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
@@ -124,44 +144,4 @@
       </plugin>
     </plugins>
   </build>
-
-  <profiles>
-    <profile>
-      <id>run-its</id>
-      <build>
-
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-invoker-plugin</artifactId>
-            <version>3.1.0</version>
-            <configuration>
-              <debug>true</debug>
-              <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
-              <pomIncludes>
-                <pomInclude>*/pom.xml</pomInclude>
-              </pomIncludes>
-              <postBuildHookScript>verify</postBuildHookScript>
-              <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
-              <settingsFile>src/it/settings.xml</settingsFile>
-              <goals>
-                <goal>clean</goal>
-                <goal>test-compile</goal>
-              </goals>
-            </configuration>
-            <executions>
-              <execution>
-                <id>integration-test</id>
-                <goals>
-                  <goal>install</goal>
-                  <goal>integration-test</goal>
-                  <goal>verify</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
 </project>
