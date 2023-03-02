@@ -10,6 +10,7 @@
 
   <name>Remove Attached Artifact Maven Plugin</name>
   <url>http://www.rudikershaw.com</url>
+  <description>A Maven plugin for removing 'Attached Artifacts' from a build.</description>
 
   <licenses>
     <license>
