@@ -13,16 +13,16 @@ import java.util.Optional;
 import java.util.Set;
 
 /**
- * Goal which touches a timestamp file.
+ * Goal which removes 'attached artifacts'.
  */
 @Mojo( name = "remove", defaultPhase = LifecyclePhase.VERIFY )
 public class RemoveAttachedArtifactsMojo extends AbstractMojo {
 
     @Parameter
-    private Set<String> artifactIds;
+    Set<String> artifactIds;
 
     @Parameter(defaultValue = "${project}", readonly = true, required = true)
-    private MavenProject project;
+    MavenProject project;
 
     public void execute() throws MojoExecutionException {
         List<Artifact> artifacts = project.getAttachedArtifacts();
