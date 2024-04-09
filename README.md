@@ -13,7 +13,7 @@ If you find yourself in need of this plugin it may be that your build is in a bi
 <plugin>
   <groupId>com.rudikershaw.remove.attached.artifact</groupId>
   <artifactId>remove-attached-artifact-maven-plugin</artifactId>
-  <version>1.0</version>
+  <version>1.1.0</version>
   <executions>
     <execution>
       <id>remove-attached-artifacts</id>
