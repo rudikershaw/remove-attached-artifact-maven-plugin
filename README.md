@@ -1,5 +1,4 @@
 [![MIT Licence][licence-image]][licence-url]
-[![Maven Central][maven-central-image]][maven-central-url]
 
 # Remove Attached Artifact Maven Plugin
 
